@@ -143,6 +143,11 @@
     <Content Include="N2\Content\Export\CsvImport.ascx" />
     <Content Include="N2\Content\Export\Export.aspx" />
     <Content Include="N2\Content\Export\ItemXmlImport.ascx" />
+    <Content Include="N2\Content\Globalization\Export.aspx" />
+    <Content Include="N2\Content\Globalization\Import.aspx" />
+    <Content Include="N2\Content\Globalization\ItemXmlImport.ascx" />
+    <Content Include="N2\Content\Globalization\ItemXmlUpdate.ascx" />
+    <Content Include="N2\Content\Globalization\Update.aspx" />
     <Content Include="N2\Content\LinkTracker\UpdateReferences.aspx" />
     <Content Include="N2\Content\Navigation\Tree.js" />
     <Content Include="N2\Content\Versions\RecentVersions.ascx" />
@@ -854,6 +859,11 @@
     <Content Include="N2\Content\LinkTracker\App_LocalResources\UpdateReferences.aspx.resx" />
     <Content Include="N2\Content\Versions\App_LocalResources\RecentVersions.ascx.resx" />
     <Content Include="N2\Content\Activity\Notify.ashx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\Import.aspx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\ItemXmlImport.ascx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\ItemXmlUpdate.ascx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\Update.aspx.resx" />
+    <Content Include="N2\Content\Globalization\App_LocalResources\Export.aspx.resx" />
     <None Include="N2\Content\Dependencies.aspx" />
     <Content Include="N2\Files\FileSystem\UploadFile.ashx" />
     <Content Include="N2\Installation\log4net.config" />
@@ -922,6 +932,41 @@
     <Compile Include="N2\Content\ControlPanelEditingSaveAttribute.cs" />
     <Compile Include="N2\Content\ControlPanelDiscardPreviewOrDeleteAttribute.cs" />
     <Compile Include="N2\Content\ControlPanelPreviewPublishAttribute.cs" />
+    <Compile Include="N2\Content\Globalization\Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\Export.aspx.designer.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\ItemXmlImport.ascx.cs">
+      <DependentUpon>ItemXmlImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\ItemXmlImport.ascx.designer.cs">
+      <DependentUpon>ItemXmlImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\ItemXmlUpdate.ascx.cs">
+      <DependentUpon>ItemXmlUpdate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\ItemXmlUpdate.ascx.designer.cs">
+      <DependentUpon>ItemXmlUpdate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="N2\Content\Globalization\Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="N2\Content\LinkTracker\UpdateImagesMigration.cs" />
     <Compile Include="N2\Content\Navigation\ChildGroupContainer.cs" />
     <Compile Include="N2\Content\Navigation\ChildGroupSource.cs" />

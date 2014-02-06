@@ -5,6 +5,16 @@ namespace N2.Persistence.Serialization
 {
 	public class DetailCollectionXmlWriter : DetailXmlWriter
 	{
+
+		public DetailCollectionXmlWriter()
+		{
+		}
+
+		public DetailCollectionXmlWriter(ExportOptions options)
+		{
+			base.Options = options;
+		}
+
 		public override void Write(ContentItem item, XmlTextWriter writer)
 		{
 			using (new ElementWriter("detailCollections", writer))

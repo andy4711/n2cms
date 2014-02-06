@@ -9,7 +9,7 @@ using N2.Edit.Web;
 using N2.Edit;
 using N2.Definitions;
 
-namespace N2.Management.Content.Export
+namespace N2.Management.Content.Globalization
 {
 	public partial class Export : EditPage
 	{
@@ -18,9 +18,6 @@ namespace N2.Management.Content.Export
 		protected override void OnInit(EventArgs e)
 		{
 			base.OnInit(e);
-
-			tpImport.NavigateUrl = "Default.aspx?selected=" + Selection.SelectedItem.Path;
-			//tpUpdate.NavigateUrl = "Update.aspx?selected=" + Selection.SelectedItem.Path;
 
 			if (Selection.SelectedItem is IFileSystemNode)
 			{
@@ -33,17 +30,32 @@ namespace N2.Management.Content.Export
 			base.OnPreRender(e);
 
 			exportedItems.CurrentItem = Selection.SelectedItem;
-			tpExport.DataBind();
+			exportedItems.DataBind();
 		}
 
 		protected void btnExport_Command(object sender, CommandEventArgs e)
 		{
 			ExportOptions options = ExportOptions.Default;
-			if (chkDefinedDetails.Checked)
-				options |= ExportOptions.OnlyDefinedDetails;
-			if (chkAttachments.Checked)
+
+			if (chkPageTitle.Checked==false)
+				options |= ExportOptions.TranslatePageTitle;
+
+			if (chkPageURL.Checked == false)
+				options |= ExportOptions.TranslatePageURL;
+
+			if (chkPageName.Checked == false)
+				options |= ExportOptions.TranslatePageName;
+
+			//if (chkDetailName.Checked == false)
+			//	options |= ExportOptions.TranslateDetailName;
+
+			//if (chkDetailTitle.Checked == false)
+			//	options |= ExportOptions.TranslateDetailTitle;
+
+			if (chkPartTitle.Checked == false)
+				options |= ExportOptions.TranslatePartTitle;
+
 				options |= ExportOptions.ExcludeAttachments;
-			if (chkRecursive.Checked == true)
 				options |= ExportOptions.ExcludePages;
 
 			Engine.Resolve<Exporter>().Export(Selection.SelectedItem, options, Response);

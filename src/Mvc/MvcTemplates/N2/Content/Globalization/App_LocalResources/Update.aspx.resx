@@ -117,16 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ltCreateNew.Text" xml:space="preserve">
-    <value>Translate</value>
+  <data name="hlCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="ltExport.Text" xml:space="preserve">
-    <value>Export</value>
+  <data name="hlCancel.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="ltImportNew.Text" xml:space="preserve">
-    <value>Import new item</value>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Update item</value>
   </data>
-  <data name="ltUpdate.Text" xml:space="preserve">
+  <data name="attachments.Text" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="btnImportUploaded.Text" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="btnUploadImport.Text" xml:space="preserve">
+    <value>Upload and update here</value>
+  </data>
+  <data name="btnVerify.Text" xml:space="preserve">
+    <value>Upload and verify</value>
+  </data>
+  <data name="exportedItems.Text" xml:space="preserve">
+    <value>Exported Items</value>
+  </data>
+  <data name="h1.Text" xml:space="preserve">
+    <value>Export &amp; Import</value>
+  </data>
+  <data name="importedItems.Text" xml:space="preserve">
+    <value>Imported Items</value>
+  </data>
+  <data name="chkAttachments.Text" xml:space="preserve">
+    <value>Don't update attachments</value>
+  </data>
+  <data name="chkAttachments.ToolTip" xml:space="preserve">
+    <value>Don't update attachments such as images or documents from the export file</value>
+  </data>
+  <data name="popNotSupported.Text" xml:space="preserve">
+    <value>This is not supported for this type of item.</value>
+  </data>
+  <data name="ppPermitted.Text" xml:space="preserve">
+    <value>You do not have sufficient permissions.</value>
   </data>
 </root>

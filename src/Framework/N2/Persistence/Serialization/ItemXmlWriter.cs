@@ -64,7 +64,7 @@ namespace N2.Persistence.Serialization
 		{
 			using (ElementWriter itemElement = new ElementWriter("item", writer))
 			{
-				WriteDefaultAttributes(itemElement, item);
+				WriteDefaultAttributes(itemElement, item, options);
 
 				foreach(IXmlWriter xmlWriter in GetWriters(options))
 				{
@@ -78,8 +78,8 @@ namespace N2.Persistence.Serialization
 			if((options & ExportOptions.OnlyDefinedDetails) == ExportOptions.OnlyDefinedDetails)
 				yield return new DefinedDetailXmlWriter(definitions);
 			else
-				yield return new DetailXmlWriter();
-			yield return new DetailCollectionXmlWriter();
+				yield return new DetailXmlWriter(options);
+			yield return new DetailCollectionXmlWriter(options);
 			yield return new ChildXmlWriter(options);
 			yield return new AuthorizationXmlWriter();
 			yield return new PersistablePropertyXmlWriter(definitions);
@@ -87,12 +87,16 @@ namespace N2.Persistence.Serialization
 				yield return new AttachmentXmlWriter(fs);
 		}
 
-		protected virtual void WriteDefaultAttributes(ElementWriter itemElement, ContentItem item)
+		protected virtual void WriteDefaultAttributes(ElementWriter itemElement, ContentItem item, ExportOptions options)
 		{
+
+
 			if (itemElement == null)
 				throw new ArgumentNullException("itemElement");
 			if (item == null)
 				throw new ArgumentNullException("item");
+
+			string translate="";
 
 			itemElement.WriteAttribute("id", item.ID);
 			itemElement.WriteAttribute("name", item.ID.ToString() == item.Name ? "" : item.Name);
@@ -131,6 +135,42 @@ namespace N2.Persistence.Serialization
 			{
 				Debug.Assert(item.VersionOf.ID != null, "item.VersionOf.ID != null");
 				itemElement.WriteAttribute("versionOf", item.VersionOf.ID.Value);
+			}
+
+			if (item.IsPage)
+			{
+				if (options.HasFlag(ExportOptions.TranslatePageName))
+						translate += "Name,";
+
+				if (options.HasFlag(ExportOptions.TranslatePageTitle))
+						translate += "Title,";
+
+				if (options.HasFlag(ExportOptions.TranslatePageURL))
+						translate += "URL,";
+
+				if (translate != "")
+				{
+					if (translate.EndsWith(","))
+						translate = translate.Remove(translate.Length-1);
+					
+						itemElement.WriteAttribute("xmlTranslate", translate);
+				}
+			}
+			else
+			{
+				//if (options.HasFlag(ExportOptions.TranslatePartName))
+				//	translate += "Name,";
+					
+				if (options.HasFlag(ExportOptions.TranslatePartTitle))
+					translate += "Title,";
+					
+				if (translate != "")
+				{
+					if (translate.EndsWith(","))
+						translate = translate.Remove(translate.Length - 1);
+
+					itemElement.WriteAttribute("xmlTranslate", translate);
+				}
 			}
 		}
 	}

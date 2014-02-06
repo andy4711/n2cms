@@ -22,6 +22,9 @@ namespace N2.Edit
 			ManagementInterfaceUrl = config.Paths.ManagementInterfaceUrl.TrimEnd('/');
 			EditTreeUrl = config.Paths.EditTreeUrl;
 			EditItemUrl = config.Paths.EditItemUrl;
+			ImportLanguageItemUrl = config.Paths.ImportLanguageItemUrl;
+			UpdateLanguageItemUrl = config.Paths.UpdateLanguageItemUrl;
+			ExportLanguageItemUrl = config.Paths.ExportLanguageItemUrl;
 			EditInterfaceUrl = config.Paths.EditInterfaceUrl;
 			if (config.Legacy)
 				EditInterfaceUrl += "Content/";
@@ -39,6 +42,12 @@ namespace N2.Edit
 		protected virtual string NewItemUrl { get; set; }
 
 		protected virtual string EditItemUrl { get; set; }
+
+		protected virtual string ImportLanguageItemUrl { get; set; }
+
+		protected virtual string UpdateLanguageItemUrl { get; set; }
+
+		protected virtual string ExportLanguageItemUrl { get; set; }
 
 		public virtual string EditTreeUrl
 		{
@@ -182,6 +191,55 @@ namespace N2.Edit
 				url = url.AppendQuery(PathData.VersionIndexQueryKey, selected.VersionIndex)
 					.AppendQuery("VersionKey", selected.GetVersionKey());
 			}
+
+			return url;
+		}
+
+		/// <summary>Gets the url to import language page creating new items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the import page.</returns>
+		public virtual string GetImportLanguagePageUrl(ContentItem selected)
+		{
+			if (selected == null) throw new ArgumentNullException("selected");
+			
+			if (selected == null)
+				throw new N2Exception("Cannot import item before or after the root page.");
+
+			Url url = Url.ResolveTokens(ImportLanguageItemUrl);
+			url = url.AppendQuery(SelectionUtility.SelectedQueryKey, selected.Path);
+			
+
+			return url;
+		}
+
+		/// <summary>Gets the url to update language page updating existing items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the update page.</returns>
+		public virtual string GetUpdateLanguagePageUrl(ContentItem selected)
+		{
+			if (selected == null) throw new ArgumentNullException("selected");
+			
+			if (selected == null)
+				throw new N2Exception("Cannot update item ");
+
+			Url url = Url.ResolveTokens(UpdateLanguageItemUrl);
+			url = url.AppendQuery(SelectionUtility.SelectedQueryKey, selected.Path);
+		
+			return url;
+		}
+
+		/// <summary>Gets the url to export language page exporting existing items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the export page.</returns>
+		public virtual string GetExportLanguagePageUrl(ContentItem selected)
+		{
+			if (selected == null) throw new ArgumentNullException("selected");
+
+			if (selected == null)
+				throw new N2Exception("Cannot export item ");
+
+			Url url = Url.ResolveTokens(ExportLanguageItemUrl);
+			url = url.AppendQuery(SelectionUtility.SelectedQueryKey, selected.Path);
 
 			return url;
 		}

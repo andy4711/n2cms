@@ -25,6 +25,21 @@ namespace N2.Edit
 		/// <returns>The url to the edit page.</returns>
 		string GetEditNewPageUrl(ContentItem selected, ItemDefinition definition, string zoneName, CreationPosition position);
 
+		/// <summary>Gets the url to import language page creating new items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the import page.</returns>
+		string GetImportLanguagePageUrl(ContentItem selected);
+
+		/// <summary>Gets the url to update language page creating new items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the update page.</returns>
+		string GetUpdateLanguagePageUrl(ContentItem selected);
+
+		/// <summary>Gets the url to export language page creating new items.</summary>
+		/// <param name="selected">The selected item.</param>
+		/// <returns>The url to the export page.</returns>
+		string GetExportLanguagePageUrl(ContentItem selected);
+
 		/// <summary>Gets the url to the edit page where to edit an existing item.</summary>
 		/// <param name="item">The item to edit.</param>
 		/// <returns>The url to the edit page</returns>

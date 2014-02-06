@@ -9,6 +9,12 @@ namespace N2.Persistence.Serialization
 	public class DetailXmlWriter : IXmlWriter
 	{
 		string applicationPath = N2.Web.Url.ApplicationPath ?? "/";
+		ExportOptions options;
+
+		public ExportOptions Options
+		{
+			set { options = value; }
+		}
 
 		public virtual void Write(ContentItem item, XmlTextWriter writer)
 		{
@@ -19,6 +25,15 @@ namespace N2.Persistence.Serialization
 					WriteDetail(item, detail, writer);
 				}
 			}
+		}
+
+		public DetailXmlWriter()
+		{
+		}
+
+		public DetailXmlWriter(ExportOptions options)
+		{
+			this.options = options;
 		}
 
 		protected virtual IEnumerable<ContentDetail> GetDetails(ContentItem item)
@@ -33,7 +48,27 @@ namespace N2.Persistence.Serialization
 				detailElement.WriteAttribute("typeName", SerializationUtility.GetTypeAndAssemblyName(detail.ValueType));
 				detailElement.WriteAttribute("meta", detail.Meta);
 
+				
+				var prop = item.GetType().GetProperty(detail.Name);
+
+				if (prop != null)
+				{
+					if (Attribute.IsDefined(prop, typeof(N2.Details.XMLTranslateAttribute)))
+					{
+						string translate = "Value";
+
+						//if (options.HasFlag(ExportOptions.TranslateDetailName))
+						//		translate += ",Name";
+
+						//if (options.HasFlag(ExportOptions.TranslateDetailTitle))
+						//		translate += ",Title";
+
+						detailElement.WriteAttribute("xmlTranslate", translate);
+					}
+				}
+
 				WriteInnerContents(item, detail, detail.ValueTypeKey, detailElement);
+
 			}
 		}
 

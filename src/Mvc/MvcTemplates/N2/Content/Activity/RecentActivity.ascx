@@ -24,8 +24,8 @@
 	var activityContainer = "#<%= boxActivity.ClientID %> .box-inner";
 	var activities = <%= ActivitiesJson %>;
 	$(function () {
-		var template = Hogan.compile($("#activityTemplate").html());
-		$(activityContainer).html(template.render(activities));
+		//var template = Hogan.compile($("#activityTemplate").html());
+		//$(activityContainer).html(template.render(activities));
 
 		var isDirty = false;
 		$(document).keyup(function () {

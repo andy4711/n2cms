@@ -14,6 +14,8 @@ namespace N2.Persistence.Serialization
 		/// <summary>All items except the root node.</summary>
 		Children = 2,
 		/// <summary>Import attachment overwriting any existing files.</summary>
-		Attachments = 4
+		Attachments = 4,
+		/// <summary>Asociates with Language.</summary>
+		Language = 5
 	}
 }

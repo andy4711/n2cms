@@ -10,9 +10,12 @@ namespace N2.Engine.Globalization
 	/// </summary>
 	public class TranslateSpecification
 	{
-		public TranslateSpecification(string editUrl, ILanguage language, ContentItem existingItem, ItemDefinition definition, Site site)
+		public TranslateSpecification(string editUrl, string importLanguageUrl, string updateLanguageUrl, string exportLanguageUrl, ILanguage language, ContentItem existingItem, ItemDefinition definition, Site site)
 		{
 			EditUrl = editUrl;
+			ImportLanguageUrl = importLanguageUrl;
+			UpdateLanguageUrl = updateLanguageUrl;
+			ExportLanguageUrl = exportLanguageUrl;
 			Language = language;
 			ExistingItem = existingItem;
 			Definition = definition;
@@ -32,6 +35,12 @@ namespace N2.Engine.Globalization
 		}
 
 		public string EditUrl { get; set; }
+
+		public string ImportLanguageUrl { get; set; }
+
+		public string UpdateLanguageUrl { get; set; }
+
+		public string ExportLanguageUrl { get; set; }
 
 		public ContentItem ExistingItem { get; set; }
 

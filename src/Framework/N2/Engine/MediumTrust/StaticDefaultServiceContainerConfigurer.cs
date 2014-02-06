@@ -83,6 +83,7 @@ namespace N2.Engine.Configuration
 
 			engine.Container.AddComponent("n2.exporter", typeof(Exporter), typeof(GZipExporter));
 			engine.Container.AddComponent("n2.importer", typeof(Importer), typeof(GZipImporter));
+			engine.Container.AddComponent("n2.updater", typeof(Updater), typeof(GZipUpdater));
 
 			engine.Container.AddComponent("n2.worker", typeof(IWorker), typeof(AsyncWorker));
 

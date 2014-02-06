@@ -117,16 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ltCreateNew.Text" xml:space="preserve">
-    <value>Translate</value>
-  </data>
-  <data name="ltExport.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="ltImportNew.Text" xml:space="preserve">
-    <value>Import new item</value>
-  </data>
-  <data name="ltUpdate.Text" xml:space="preserve">
-    <value>Update</value>
+  <data name="lblTypeMissmatch.Text" xml:space="preserve">
+    <value>Cannot update page with different content type</value>
   </data>
 </root>

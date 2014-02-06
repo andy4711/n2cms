@@ -319,6 +319,11 @@ namespace N2
 		}
 		#endregion
 
+		#region InternalUse
+		[NonInterceptable]
+		internal bool DontReOrderSave { get; set; }
+		#endregion
+
 		#region Generated Properties
 		/// <summary>The default file extension for this content item, e.g. ".aspx".</summary>
 		[NonInterceptable]
@@ -638,6 +643,25 @@ namespace N2
 				newParent.Children.Add(this);
 			}
 		}
+
+		/// <summary>Adds an item to the children of this item updating its parent refernce.</summary>
+		/// <param name="newParent">The new parent of the item. If this parameter is null the item is detached from the hierarchical structure.</param>
+		[NonInterceptable]
+		public virtual void InsertAt(ContentItem newParent, int index)
+		{
+			if (Parent != null && Parent != newParent && Parent.Children.Contains(this))
+				Parent.Children.Remove(this);
+
+			url = null;
+			Parent = newParent;
+			AncestralTrail = newParent.GetTrail();
+
+			if (newParent != null && !newParent.Children.Contains(this))
+			{
+				newParent.Children.Insert(index, this);
+			}
+		}
+
 
 		/// <summary>Finds children based on the given url segments. The method supports convering the last segments into action and parameter.</summary>
 		/// <param name="remainingUrl">The remaining url segments.</param>

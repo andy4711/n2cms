@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.XPath;
 using N2.Details;
 using N2.Edit.FileSystem;
+using N2.Engine.Globalization;
 
 namespace N2.Persistence.Serialization
 {
@@ -66,6 +67,12 @@ namespace N2.Persistence.Serialization
 
 		public virtual void Import(IImportRecord record, ContentItem destination, ImportOption options)
 		{
+			
+			if ((options & ImportOption.Language) == ImportOption.Language)
+			{
+				AssociateLanguageKeys(record.ReadItems);
+			}
+
 			ResetIDs(record.ReadItems);
 			if ((options & ImportOption.AllItems) == ImportOption.AllItems)
 			{
@@ -152,6 +159,23 @@ namespace N2.Persistence.Serialization
 			foreach(ContentItem item in items)
 			{
 				item.ID = 0;
+			}
+		}
+
+		protected virtual void AssociateLanguageKeys(IEnumerable<ContentItem> items)
+		{
+			foreach (ContentItem item in items)
+			{
+				if (item.TranslationKey == null)
+				{
+					item.TranslationKey = item.ID;
+					ContentItem currentItem = _persister.Get(item.ID);
+					if (currentItem != null)
+					{
+						currentItem.TranslationKey = item.ID;
+						_persister.Save(currentItem);
+					}
+				}
 			}
 		}
 	}

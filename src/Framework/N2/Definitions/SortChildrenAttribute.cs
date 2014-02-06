@@ -79,10 +79,13 @@ namespace N2.Definitions
 
             if (item.Parent == null)
 				return;
-            
-			foreach (ContentItem updatedItem in ReorderChildren(item.Parent))
+
+			if (item.Parent.DontReOrderSave == false)
 			{
-				context.UnsavedItems.Add(updatedItem);
+				foreach (ContentItem updatedItem in ReorderChildren(item.Parent))
+				{
+					context.UnsavedItems.Add(updatedItem);
+				}
 			}
 		}
 	}

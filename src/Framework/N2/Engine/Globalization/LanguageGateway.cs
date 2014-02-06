@@ -158,7 +158,14 @@ namespace N2.Engine.Globalization
 					if (translation != null)
 					{
 						string url = editUrlManager.GetEditExistingItemUrl(translation);
-						yield return new TranslateSpecification(url, language, translation, definition, host.GetSite(translation));
+
+						Url urlImport = editUrlManager.GetUpdateLanguagePageUrl(translation);
+						urlImport = urlImport.AppendQuery(TranslationKey, item.TranslationKey ?? item.ID);
+
+						Url urlExport = editUrlManager.GetExportLanguagePageUrl(translation);
+						urlExport = urlExport.AppendQuery(TranslationKey, item.TranslationKey ?? item.ID);
+
+						yield return new TranslateSpecification(url, "#", urlImport, urlExport, language, translation, definition, host.GetSite(translation));
 					}
 					else
 					{
@@ -168,7 +175,7 @@ namespace N2.Engine.Globalization
 						{
 							if (generateNonTranslated)
 							{
-								yield return new TranslateSpecification("#", language, translation, definition, host.GetSite(GetTranslation(language)))
+								yield return new TranslateSpecification("#", "#", "#", "#", language, translation, definition, host.GetSite(GetTranslation(language)))
 								{
 									IsTranslatable = false
 								};
@@ -179,7 +186,10 @@ namespace N2.Engine.Globalization
 						Url url = editUrlManager.GetEditNewPageUrl(translatedParent, definition, item.ZoneName, CreationPosition.Below);
 						url = url.AppendQuery(TranslationKey, item.TranslationKey ?? item.ID);
 
-						yield return new TranslateSpecification(url, language, translation, definition, host.GetSite(translatedParent));
+						Url urlImport = editUrlManager.GetImportLanguagePageUrl(translatedParent);
+						urlImport = urlImport.AppendQuery(TranslationKey, item.TranslationKey ?? item.ID);
+
+						yield return new TranslateSpecification(url, urlImport, "#", "#", language, translation, definition, host.GetSite(translatedParent));
 					}
 				}
 			}

@@ -117,16 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ltCreateNew.Text" xml:space="preserve">
-    <value>Translate</value>
+  <data name="hlCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="ltExport.Text" xml:space="preserve">
-    <value>Export</value>
+  <data name="hlCancel.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="ltImportNew.Text" xml:space="preserve">
-    <value>Import new item</value>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Export item</value>
   </data>
-  <data name="ltUpdate.Text" xml:space="preserve">
-    <value>Update</value>
+  <data name="attachments.Text" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Export these item</value>
+  </data>
+  <data name="exportedItems.Text" xml:space="preserve">
+    <value>Exported Items</value>
+  </data>
+  <data name="h1.Text" xml:space="preserve">
+    <value>Export &amp; Import</value>
+  </data>
+  <data name="chkDefinedDetails.Text" xml:space="preserve">
+    <value>Exclude computer generated data</value>
+  </data>
+  <data name="chkAttachments.Text" xml:space="preserve">
+    <value>Don't export attachments</value>
+  </data>
+  <data name="chkAttachments.ToolTip" xml:space="preserve">
+    <value>Remove attachments such as images or documents from the export file (reduces size)</value>
+  </data>
+  <data name="chkDefinedDetails.ToolTip" xml:space="preserve">
+    <value>Export only data inputted by a user (cleans export file from deprecated information and computer generated data)</value>
+  </data>
+  <data name="ppPermitted.Text" xml:space="preserve">
+    <value>You do not have sufficient permissions.</value>
+  </data>
+  <data name="chkRecursive.Text" xml:space="preserve">
+    <value>Exclude child pages</value>
+  </data>
+  <data name="chkRecursive.ToolTip" xml:space="preserve">
+    <value>Exports only the selected page</value>
   </data>
 </root>

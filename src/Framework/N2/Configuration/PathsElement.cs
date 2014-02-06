@@ -29,6 +29,27 @@ namespace N2.Configuration
 			set { base["editItemUrl"] = value; }
 		}
 
+		[ConfigurationProperty("updateLanguageItemUrl", DefaultValue = "{ManagementUrl}/Content/Globalization/Update.aspx")]
+		public string UpdateLanguageItemUrl
+		{
+			get { return (string)base["updateLanguageItemUrl"]; }
+			set { base["updateLanguageItemUrl"] = value; }
+		}
+
+		[ConfigurationProperty("exportLanguageItemUrl", DefaultValue = "{ManagementUrl}/Content/Globalization/Export.aspx")]
+		public string ExportLanguageItemUrl
+		{
+			get { return (string)base["exportLanguageItemUrl"]; }
+			set { base["exportLanguageItemUrl"] = value; }
+		}
+
+		[ConfigurationProperty("importLanguageItemUrl", DefaultValue = "{ManagementUrl}/Content/Globalization/Import.aspx")]
+		public string ImportLanguageItemUrl
+		{
+			get { return (string)base["importLanguageItemUrl"]; }
+			set { base["importLanguageItemUrl"] = value; }
+		}
+
 		[ConfigurationProperty("managementInterfaceUrl", DefaultValue = "~/N2/")]
 		public string ManagementInterfaceUrl
 		{

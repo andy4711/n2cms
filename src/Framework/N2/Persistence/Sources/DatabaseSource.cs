@@ -96,12 +96,15 @@ namespace N2.Persistence.Sources
 					item.Name = null;
 
 				item.AddTo(item.Parent);
-				
-				// make sure the ordering is the same next time these siblings are loaded
-				var unsavedItems = item.Parent.EnsureChildrenSortOrder();
-				foreach (var itemToSave in unsavedItems.Union(new [] { item }))
+
+				if (item.Parent.DontReOrderSave == false)
 				{
-					repository.SaveOrUpdate(itemToSave);
+					// make sure the ordering is the same next time these siblings are loaded
+					var unsavedItems = item.Parent.EnsureChildrenSortOrder();
+					foreach (var itemToSave in unsavedItems.Union(new[] { item }))
+					{
+						repository.SaveOrUpdate(itemToSave);
+					}
 				}
 
 				// ensure a name, fallback to id

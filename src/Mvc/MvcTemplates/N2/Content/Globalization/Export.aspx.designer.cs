@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace N2.Management.Content.Export {
+namespace N2.Management.Content.Globalization {
     
     
     public partial class Export {
@@ -31,24 +31,6 @@ namespace N2.Management.Content.Export {
         protected global::N2.Edit.Web.UI.Controls.PersistentOnlyPanel popNotSupported;
         
         /// <summary>
-        /// tpImport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::N2.Web.UI.WebControls.TabPanel tpImport;
-        
-        /// <summary>
-        /// tpExport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::N2.Web.UI.WebControls.TabPanel tpExport;
-        
-        /// <summary>
         /// btnExport control.
         /// </summary>
         /// <remarks>
@@ -58,30 +40,39 @@ namespace N2.Management.Content.Export {
         protected global::System.Web.UI.WebControls.Button btnExport;
         
         /// <summary>
-        /// chkRecursive control.
+        /// chkPageTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRecursive;
+        protected global::System.Web.UI.WebControls.CheckBox chkPageTitle;
         
         /// <summary>
-        /// chkDefinedDetails control.
+        /// chkPageName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkDefinedDetails;
+        protected global::System.Web.UI.WebControls.CheckBox chkPageName;
         
         /// <summary>
-        /// chkAttachments control.
+        /// chkPageURL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAttachments;
+        protected global::System.Web.UI.WebControls.CheckBox chkPageURL;
+        
+        /// <summary>
+        /// chkPartTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkPartTitle;
     }
 }

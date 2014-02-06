@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace N2.Management.Content.Export {
+namespace N2.Management.Content.Globalization {
     
     
-    public partial class Export {
+    public partial class ItemXmlImport {
         
         /// <summary>
-        /// hlCancel control.
+        /// cvImport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::N2.Edit.Web.UI.Controls.CancelLink hlCancel;
+        protected global::System.Web.UI.WebControls.CustomValidator cvImport;
         
         /// <summary>
-        /// popNotSupported control.
+        /// pnlNewName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::N2.Edit.Web.UI.Controls.PersistentOnlyPanel popNotSupported;
+        protected global::System.Web.UI.WebControls.Panel pnlNewName;
         
         /// <summary>
-        /// tpImport control.
+        /// lblNewName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::N2.Web.UI.WebControls.TabPanel tpImport;
+        protected global::System.Web.UI.WebControls.Label lblNewName;
         
         /// <summary>
-        /// tpExport control.
+        /// txtNewName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::N2.Web.UI.WebControls.TabPanel tpExport;
+        protected global::System.Web.UI.WebControls.TextBox txtNewName;
         
         /// <summary>
-        /// btnExport control.
+        /// chkSkipRoot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExport;
+        protected global::System.Web.UI.WebControls.CheckBox chkSkipRoot;
         
         /// <summary>
-        /// chkRecursive control.
+        /// btnImportUploaded control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRecursive;
+        protected global::System.Web.UI.WebControls.Button btnImportUploaded;
         
         /// <summary>
-        /// chkDefinedDetails control.
+        /// importedItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkDefinedDetails;
+        protected global::N2.Edit.AffectedItems importedItems;
         
         /// <summary>
-        /// chkAttachments control.
+        /// rptAttachments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAttachments;
+        protected global::System.Web.UI.WebControls.Repeater rptAttachments;
     }
 }

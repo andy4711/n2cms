@@ -142,6 +142,9 @@
     <Compile Include="Definitions\IPlaceholder.cs" />
     <Compile Include="Definitions\ITemplateAggregator.cs" />
     <Compile Include="Definitions\TemplateAggregator.cs" />
+    <Compile Include="Details\WithEditableTranslateAttribute.cs" />
+    <Compile Include="Details\XMLTranslateAttribute.cs" />
+    <Compile Include="Details\XMLUpdaterIgnoreAttribute.cs" />
     <Compile Include="Details\EditableDirectUrlAttribute.cs" />
     <Compile Include="Edit\Api\ApiExtensions.cs" />
     <Compile Include="Edit\Api\ApiHandlerDispatcher.cs" />
@@ -553,6 +556,9 @@
     <Compile Include="Persistence\Behaviors\BehaviorContext.cs" />
     <Compile Include="Persistence\ContentBuilder.cs" />
     <Compile Include="Persistence\FilesystemTransaction.cs" />
+    <Compile Include="Persistence\Serialization\GZipUpdater.cs" />
+    <Compile Include="Persistence\Serialization\UpdateOption.cs" />
+    <Compile Include="Persistence\Serialization\Updater.cs" />
     <Compile Include="Persistence\Serialization\Html\ItemHtmlWriter.cs" />
     <Compile Include="Persistence\Serialization\Html\ItemHtmlReader.cs" />
     <Compile Include="Persistence\IContentItemRepository.cs" />
