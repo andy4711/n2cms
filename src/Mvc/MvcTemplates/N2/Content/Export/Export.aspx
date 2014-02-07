@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/N2/Content/Framed.master" AutoEventWireup="true" CodeBehind="Export.aspx.cs" Inherits="N2.Management.Content.Export.Export" meta:resourcekey="PageResource1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/N2/Content/Framed.master" AutoEventWireup="true" CodeBehind="Export.aspx.cs" Inherits="N2.Management.Content.Export.Export" meta:resourcekey="PageResource1" %>
 <%@ Register Src="../AffectedItems.ascx" TagName="AffectedItems" TagPrefix="uc1" %>
 <%@ Register TagPrefix="edit" Namespace="N2.Edit.Web.UI.Controls" Assembly="N2.Management" %>
 
@@ -16,9 +16,6 @@
 		<div>
 		    <asp:Button ID="btnExport" runat="server" CssClass="command" OnCommand="btnExport_Command" CausesValidation="false" meta:resourceKey="btnExport" Text="Export these items" />
 		</div>
-        <div>
-		    <asp:CheckBox ID="chkRecursive" runat="server" Text="Exclude child pages" Checked="false"  meta:resourceKey="chkRecursive" />
-		</div>
 		<div>
 		    <asp:CheckBox ID="chkDefinedDetails" runat="server" Text="Exclude computer generated data"  meta:resourceKey="chkDefinedDetails" />
 		</div>
@@ -28,7 +25,5 @@
 		<n2:h4 runat="server" Text="Exported items" meta:resourceKey="exportedItems" />
 		<uc1:AffectedItems id="exportedItems" runat="server" />		
     </n2:tabpanel>
-   <%-- <n2:tabpanel id="tpUpdate" runat="server" ToolTip="Update" meta:resourceKey="tpUpdate"  NavigateUrl="Update.aspx">
-    </n2:tabpanel>--%>
 	</edit:PersistentOnlyPanel>	
 </asp:Content>
